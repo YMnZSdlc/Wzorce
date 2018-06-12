@@ -13,6 +13,23 @@ public class Main {
 
     }
 
+    int firstDuplicate(int[] a) {
+        int end = a.length;
+        int result = -1;
+        int index = end;
+        for (int i = 0; i < end; i++) {
+            for (int j = i + 1; j < end; j++) {
+                if (a[i] == a[j]) {
+                    if(index>j){
+                        result = a[j];
+                        index = j;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
     private static void singletonExample2() {
         Nvidia card = Nvidia.getInstance();
         System.out.println(card.hashCode());
@@ -32,7 +49,7 @@ public class Main {
         try {
             Thread.sleep(2000);
 
-        }catch (InterruptedException exept){
+        } catch (InterruptedException exept) {
             exept.printStackTrace();
         }
         facade.vehicleStop();
