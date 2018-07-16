@@ -11,7 +11,11 @@ public class User {
     }
 
     public static User getInstance() {
+
         if (user == null) {
+            synchronized (User.class){
+                if
+            }
             user = new User();
         }
         return user;
